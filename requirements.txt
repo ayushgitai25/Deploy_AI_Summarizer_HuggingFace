@@ -1,4 +1,4 @@
-streamlit
+streamlit>=1.26
 langchain
 langchain-community
 langchain-groq
@@ -9,4 +9,5 @@ python-dotenv
 youtube-transcript-api
 beautifulsoup4
 requests
+
 
