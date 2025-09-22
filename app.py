@@ -2,7 +2,7 @@
 🔍 AI Document Summarizer - Streamlit Application
 
 WHAT THIS APP DOES TO GET AI SUMMARY:
-==================================
+===================================
 
 1. INPUT PROCESSING:
    - Accepts 3 input types: PDF documents, Website URLs, YouTube videos
@@ -1480,3 +1480,4 @@ st.markdown(f"""
     </div>
 </div>
 """, unsafe_allow_html=True)
+
