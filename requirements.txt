@@ -7,6 +7,6 @@ pypdf
 unstructured
 python-dotenv
 youtube-transcript-api
-tempfile
 beautifulsoup4
 requests
+
