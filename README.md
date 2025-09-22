@@ -1,54 +1,27 @@
-🔍 AI Document Summarizer
-A sophisticated AI-powered application built with Streamlit, LangChain, and Groq that transforms documents, articles, and videos into intelligent summaries. This application supports multiple AI models, various input formats, and provides a professional user experience with advanced features.
+---
+title: "AI Document Summarizer"
+emoji: "🔍"
+colorFrom: "blue"
+colorTo: "green"
+sdk: "streamlit"
+sdk_version: "1.26.0"
+app_file: "app.py"
+pinned: false
+---
 
-✨ Features
-🎯 Multiple Input Support
-📄 PDF Documents: Multi-page document analysis with advanced text extraction
+# 🔍 AI Document Summarizer - Streamlit Application
 
-🌐 Website Articles: Real-time web scraping and content extraction from any URL
+## WHAT THIS APP DOES TO GET AI SUMMARY
 
-📺 YouTube Videos: Automatic transcript fetching with multi-language support
+### 1. INPUT PROCESSING
+- Accepts 3 input types: PDF documents, Website URLs, YouTube videos
+- Extracts raw text content from each source type
+- Validates and preprocesses the input data
 
-🧠 Advanced AI Models
-Choose from 8+ cutting-edge Groq models:
-
-🚀 Llama 3.1 8B (Fast): Ultra-fast processing for quick summaries
-
-🧠 Llama 3.3 70B (Smart): Enhanced reasoning and quality analysis
-
-🔥 GPT-OSS 120B (Premium): OpenAI's flagship model with advanced reasoning
-
-⭐ GPT-OSS 20B (Balanced): Perfect balance of speed and performance
-
-🔬 Llama 4 Preview Models: Experimental next-generation capabilities
-
-🌙 Kimi K2 Instruct: Ultra-long context (262K tokens) for large documents
-
-🤖 Qwen3 32B: Specialized multilingual processing
-
-🎨 Professional Interface
-Modern Design: Gradient backgrounds, smooth animations, and professional typography
-
-Responsive Layout: Mobile-friendly design with enhanced sidebar (420px width)
-
-Interactive Cards: Intuitive method selection with hover effects
-
-Real-time Status: Live feedback and progress indicators
-
-Dark/Light Mode: Adaptive theming based on system preferences
-
-📊 Analytics & Export
-Content Metrics: Word count, character count, reading time estimation
-
-Performance Stats: Sentences, paragraphs, and model information
-
-Export Options: Download summaries with timestamp and model info
-
-Copy Functionality: Easy clipboard integration
-
-🚀 Quick Start
-Prerequisites
-Python 3.9+
-
-Groq API key (Get yours here)
-
+### 2. TEXT EXTRACTION & LOADING
+- **PDF**: Uses PyPDFLoader to extract text from uploaded PDF files  
+- **Website**: Uses UnstructuredURLLoader to scrape and clean web content  
+- **YouTube**: Uses YouTubeTranscriptApi to fetch video transcripts. Fallback: 
+  ```python
+  from langchain_community.document_loaders import YoutubeLoader
+  loader = YoutubeLoader.from_youtube_url(youtube_url, add_video_info=True)
