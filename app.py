@@ -1127,7 +1127,7 @@ if st.session_state.content_loaded and st.session_state.documents:
                 if summary:
                     st.session_state.summary_result = summary
                     st.markdown('<div class="status-success"><span style="font-size: 1.2rem;">✅</span><div><strong>AI summary generated successfully!</strong><br><small>Summary is ready for review and download</small></div></div>', unsafe_allow_html=True)
-                    st.rerun()  # Refresh to show results
+                    st.experimental_rerun()  # Refresh to show results
                 else:
                     st.markdown('<div class="status-error"><span style="font-size: 1.2rem;">❌</span><div><strong>Failed to generate summary</strong><br><small>Please try again or contact support</small></div></div>', unsafe_allow_html=True)
             except Exception as e:
@@ -1230,7 +1230,7 @@ if st.session_state.summary_result:
                 for key in ['summary_result', 'content_loaded', 'documents', 'input_type']:
                     if key in st.session_state:
                         del st.session_state[key]
-                st.rerun()
+                st.experimental_rerun()
 
 # Enhanced Sidebar (Now Much Wider with Model Selection!)
 with st.sidebar:
@@ -1257,7 +1257,7 @@ with st.sidebar:
             use_container_width=True
         ):
             st.session_state.selected_model = model_name
-            st.rerun()
+            st.experimental_rerun()
         
         # Show selection indicator
         if st.session_state.selected_model == model_name:
@@ -1279,7 +1279,7 @@ with st.sidebar:
                 use_container_width=True
             ):
                 st.session_state.selected_model = model_name
-                st.rerun()
+                st.experimental_rerun()
             
             # Show selection indicator for preview models
             if st.session_state.selected_model == model_name:
@@ -1480,4 +1480,5 @@ st.markdown(f"""
     </div>
 </div>
 """, unsafe_allow_html=True)
+
 
