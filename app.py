@@ -664,10 +664,10 @@ st.markdown("""
     
     /* Responsive design */
    @media (max-width: 768px) {
-       section[data-testid=stSidebar] {
+       section[data-testid=stSidebar][aria-expanded="false"] div:first-child {
+          margin-left: -100vw !important;
           width: 100vw !important;
           min-width: 100vw !important;
-          left: 0 !important;
        }
 
         
@@ -1482,5 +1482,6 @@ st.markdown(f"""
     </div>
 </div>
 """, unsafe_allow_html=True)
+
 
 
