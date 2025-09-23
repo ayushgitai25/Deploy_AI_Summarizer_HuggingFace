@@ -663,11 +663,13 @@ st.markdown("""
     }
     
     /* Responsive design */
-    @media (max-width: 768px) {
-        section[data-testid="stSidebar"] {
-            width: 320px !important;
-            min-width: 320px !important;
-        }
+   @media (max-width: 768px) {
+       section[data-testid=stSidebar] {
+          width: 100vw !important;
+          min-width: 100vw !important;
+          left: 0 !important;
+       }
+
         
         .method-selection-container {
             grid-template-columns: 1fr;
@@ -1480,4 +1482,5 @@ st.markdown(f"""
     </div>
 </div>
 """, unsafe_allow_html=True)
+
 
