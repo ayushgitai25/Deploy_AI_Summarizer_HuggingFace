@@ -664,11 +664,19 @@ st.markdown("""
     
     /* Responsive design */
    @media (max-width: 768px) {
-       section[data-testid=stSidebar][aria-expanded="false"] div:first-child {
-          margin-left: -100vw !important;
-          width: 100vw !important;
-          min-width: 100vw !important;
-       }
+        section[data-testid=stSidebar][aria-expanded="false"] {
+          width: 0 !important;
+          min-width: 0 !important;
+          overflow: hidden !important;
+        }
+      
+        .main {
+          margin-left: 0 !important;
+        }
+      
+        section[data-testid=stSidebar] {
+          z-index: 1000 !important;
+        }
 
         
         .method-selection-container {
@@ -1482,6 +1490,7 @@ st.markdown(f"""
     </div>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
