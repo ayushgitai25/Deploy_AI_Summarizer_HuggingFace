@@ -552,128 +552,23 @@ st.markdown("""
     }
     
     /* Text input enhancement */
-    /* ULTIMATE INPUT TEXT COLOR FIX - Solves white-on-white issue */
-    .stTextInput > div > div > input,
-    .stTextInput input,
-    input[type="text"],
-    input[type="url"],
-    input[type="email"] {
-        color: #1a1a1a !important; /* Very dark text for maximum visibility */
-        background-color: #ffffff !important; /* Pure white background */
-        -webkit-text-fill-color: #1a1a1a !important; /* Safari/mobile fix */
-        caret-color: #1a1a1a !important; /* Dark cursor */
-        border: 2px solid #e8ecf7 !important;
-        border-radius: 12px !important;
-        padding: 0.75rem 1.25rem !important;
-        font-size: 1rem !important;
-        font-family: 'Inter', sans-serif !important;
-        transition: all 0.3s ease !important;
-    }
-
-    /* Text areas */
-    .stTextArea > div > div > textarea,
-    .stTextArea textarea {
-        color: #1a1a1a !important;
-        background-color: #ffffff !important;
-        -webkit-text-fill-color: #1a1a1a !important;
-        caret-color: #1a1a1a !important;
-        border: 2px solid #e8ecf7 !important;
-        border-radius: 12px !important;
-        padding: 0.75rem 1.25rem !important;
-        font-size: 1rem !important;
-        font-family: 'Inter', sans-serif !important;
-    }
-
-    /* Focus states */
-    .stTextInput > div > div > input:focus,
-    .stTextInput input:focus,
-    input[type="text"]:focus,
-    input[type="url"]:focus,
-    input[type="email"]:focus {
-        color: #1a1a1a !important;
-        background-color: #ffffff !important;
-        -webkit-text-fill-color: #1a1a1a !important;
-        border-color: #667eea !important;
-        box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1) !important;
-    }
-
-    .stTextArea > div > div > textarea:focus,
-    .stTextArea textarea:focus {
-        color: #1a1a1a !important;
-        background-color: #ffffff !important;
-        -webkit-text-fill-color: #1a1a1a !important;
-        border-color: #667eea !important;
-        box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1) !important;
-    }
-
-    /* Dark mode force overrides */
-    [data-theme="dark"] .stTextInput > div > div > input,
-    [data-theme="dark"] .stTextInput input,
-    [data-theme="dark"] input[type="text"],
-    [data-theme="dark"] input[type="url"],
-    [data-theme="dark"] input[type="email"],
-    [data-theme="dark"] .stTextArea > div > div > textarea,
-    [data-theme="dark"] .stTextArea textarea {
-        color: #1a1a1a !important;
-        background-color: #ffffff !important;
-        -webkit-text-fill-color: #1a1a1a !important;
-        caret-color: #1a1a1a !important;
-    }
-
-    /* Media query for dark mode preference */
-    @media (prefers-color-scheme: dark) {
-        .stTextInput > div > div > input,
-        .stTextInput input,
-        input[type="text"],
-        input[type="url"],
-        input[type="email"],
-        .stTextArea > div > div > textarea,
-        .stTextArea textarea {
-            color: #1a1a1a !important;
-            background-color: #ffffff !important;
-            -webkit-text-fill-color: #1a1a1a !important;
-            caret-color: #1a1a1a !important;
-        }
-    }
-
-    /* Placeholder styling */
-    .stTextInput > div > div > input::placeholder,
-    .stTextInput input::placeholder,
-    input[type="text"]::placeholder,
-    input[type="url"]::placeholder,
-    input[type="email"]::placeholder,
-    .stTextArea > div > div > textarea::placeholder,
-    .stTextArea textarea::placeholder {
-        color: #64748b !important;
-        opacity: 0.7 !important;
-        -webkit-text-fill-color: #64748b !important;
-    }
-
-    /* Extra targeting for stubborn cases */
-    div[data-testid="stTextInput"] input,
-    div[data-testid="stTextArea"] textarea {
-        color: #1a1a1a !important;
-        background-color: #ffffff !important;
-        -webkit-text-fill-color: #1a1a1a !important;
-    }
-
-    /* Mobile responsive */
-    @media screen and (max-width: 768px) {
-        .stTextInput > div > div > input,
-        .stTextInput input,
-        input[type="text"],
-        input[type="url"],
-        input[type="email"],
-        .stTextArea > div > div > textarea,
-        .stTextArea textarea {
-            color: #1a1a1a !important;
-            background-color: #ffffff !important;
-            -webkit-text-fill-color: #1a1a1a !important;
-            font-size: 16px !important; /* Prevent mobile zoom */
-        }
+    .stTextInput > div > div > input {
+        border-radius: 12px;
+        border: 2px solid #e8ecf7;
+        padding: 0.75rem 1.25rem;
+        font-size: 1rem;
+        font-family: 'Inter', sans-serif;
+        transition: all 0.3s ease;
+        background: linear-gradient(145deg, #ffffff, #f8faff);
     }
     
-    /*     /* Selectbox enhancement */
+    .stTextInput > div > div > input:focus {
+        border-color: #667eea;
+        box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+        background: #ffffff;
+    }
+    
+    /* Selectbox enhancement */
     .stSelectbox > div > div > div {
         border-radius: 12px;
         border: 2px solid #e8ecf7;
@@ -1585,4 +1480,3 @@ st.markdown(f"""
     </div>
 </div>
 """, unsafe_allow_html=True)
-
