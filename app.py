@@ -158,128 +158,40 @@ GROQ_MODELS = {
 # Enhanced Custom CSS for better card-based radio selection and wider sidebar
 st.markdown("""
 <style>
-    /* MOBILE RESPONSIVE FULL SCREEN SIDEBAR - Covers entire screen when expanded */
+    /* Import Google Fonts */
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+    
+    /* Hide default streamlit styling */
+    #MainMenu {visibility: hidden;}
+    footer {visibility: hidden;}
+    .stDeployButton {display:none;}
+    
+    /* WIDER SIDEBAR - Key fix here */
     section[data-testid="stSidebar"] {
-        width: 100vw !important;
-        min-width: 100vw !important;
-        z-index: 999999 !important;
-        transition: all 0.3s ease-in-out !important;
+        width: 420px !important;
+        min-width: 420px !important;
     }
-
+    
     section[data-testid="stSidebar"] > div:first-child {
-        width: 100vw !important;
-        min-width: 100vw !important;
-        max-width: 100vw !important;
+        width: 420px !important;
+        min-width: 420px !important;
     }
-
-    /* Full screen expanded state - works on desktop and mobile */
+    
     section[data-testid="stSidebar"][aria-expanded="true"] > div:first-child {
-        width: 100vw !important;
-        min-width: 100vw !important;
-        max-width: 100vw !important;
+        width: 420px !important;
         margin-left: 0px !important;
-        position: fixed !important;
-        top: 0 !important;
-        left: 0 !important;
-        right: 0 !important;
-        height: 100vh !important;
-        overflow-y: auto !important;
-        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #1a1a2e 100%) !important;
-        backdrop-filter: blur(10px) !important;
-        box-shadow: 0 0 50px rgba(0, 0, 0, 0.8) !important;
-        padding: 1rem !important;
     }
-
+    
     section[data-testid="stSidebar"][aria-expanded="false"] > div:first-child {
-        width: 100vw !important;
-        margin-left: -100vw !important;
-        transform: translateX(-100%) !important;
+        width: 420px !important;
+        margin-left: -420px !important;
     }
-
-    /* Mobile-specific optimizations */
-    @media screen and (max-width: 768px) {
-        section[data-testid="stSidebar"][aria-expanded="true"] > div:first-child {
-            width: 100vw !important;
-            min-width: 100vw !important;
-            max-width: 100vw !important;
-            height: 100vh !important;
-            min-height: 100vh !important;
-            position: fixed !important;
-            top: 0 !important;
-            left: 0 !important;
-            right: 0 !important;
-            bottom: 0 !important;
-            transform: translateX(0) !important;
-            z-index: 999999 !important;
-            overflow-x: hidden !important;
-        }
-
-        /* Completely hide main content on mobile when sidebar is expanded */
-        section[data-testid="stSidebar"][aria-expanded="true"] ~ .main,
-        section[data-testid="stSidebar"][aria-expanded="true"] ~ .main .block-container {
-            display: none !important;
-            visibility: hidden !important;
-            opacity: 0 !important;
-        }
-
-        /* Fix for mobile browser address bar and viewport issues */
-        section[data-testid="stSidebar"][aria-expanded="true"] {
-            height: 100vh !important;
-            height: 100dvh !important; /* Dynamic viewport height for newer browsers */
-        }
-
-        section[data-testid="stSidebar"][aria-expanded="true"] > div:first-child {
-            height: 100vh !important;
-            height: 100dvh !important; /* Dynamic viewport height for newer browsers */
-        }
-    }
-
-    /* Small mobile screens optimization */
-    @media screen and (max-width: 480px) {
-        section[data-testid="stSidebar"][aria-expanded="true"] > div:first-child {
-            padding: 0.5rem !important;
-        }
-
-        section[data-testid="stSidebar"] .stSelectbox label,
-        section[data-testid="stSidebar"] .stMarkdown h3,
-        section[data-testid="stSidebar"] .stMarkdown p {
-            font-size: 14px !important;
-        }
-
-        section[data-testid="stSidebar"] .stButton > button {
-            font-size: 14px !important;
-            padding: 0.5rem 1rem !important;
-        }
-    }
-
-    /* Hide main content when sidebar is expanded for full screen effect */
-    section[data-testid="stSidebar"][aria-expanded="true"] ~ .main {
-        display: none !important;
-        visibility: hidden !important;
-        opacity: 0 !important;
-        transition: all 0.3s ease-in-out !important;
-    }
-
-    /* Ensure sidebar content is properly styled in full screen mode */
-    section[data-testid="stSidebar"][aria-expanded="true"] .stMarkdown,
-    section[data-testid="stSidebar"][aria-expanded="true"] .stButton,
-    section[data-testid="stSidebar"][aria-expanded="true"] .stSelectbox {
-        color: white !important;
-    }
-
-    /* iOS Safari viewport fixes */
-    @supports (-webkit-touch-callout: none) {
-        section[data-testid="stSidebar"][aria-expanded="true"] > div:first-child {
-            height: -webkit-fill-available !important;
-        }
-    }
-
-    /* Default main content area styling for collapsed sidebar */
+    
+    /* Adjust main content area to account for wider sidebar */
     .main .block-container {
         padding-left: 1rem !important;
         padding-right: 1rem !important;
         max-width: none !important;
-        transition: all 0.3s ease-in-out !important;
     }
     
     /* Main app styling */
